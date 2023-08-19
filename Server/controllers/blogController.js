@@ -5,7 +5,7 @@ const userModel = require('../models/userModels');
 //Get all blogs
 exports.getAllBlogsController = async (req, res) => {
      try {
-          const blogs = await blogModel.find({});
+          const blogs = await blogModel.find({}).populate("user");
 
           //validator
           if(!blogs){
