@@ -31,14 +31,7 @@ const blogSchema = new mongoose.Schema(
      { timestamps: true }
 );
 
-// Add virtual to include user's username
-blogSchema.virtual('username', {
-     ref: 'User',
-     localField: 'user',
-     foreignField: '_id',
-     justOne: true,
-     options: { select: 'username' } // Only select the username field
-   });
+
 
 const blogModel = mongoose.model("Blog", blogSchema);
 
